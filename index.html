@@ -98,13 +98,107 @@
         .cart { background: #fff; padding: 10px 15px; border-radius: 5px; margin-right: 15px; }
         .cart:hover { background: #e8f5e9; }
 
-        footer {
-            background: #4caf50;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
+        .footer {
+    background: #4caf50;
+    color: #fff;
+    padding: 40px 20px 20px 20px;
+    font-family: Tahoma, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p, 
+.footer-section ul, 
+.footer-section input {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section input {
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.footer-section button {
+    padding: 8px 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #4caf50;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer-section button:hover {
+    background: #e8f5e9;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+    font-size: 14px;
+}
 
         /* مودال‌ها */
         .modal {
@@ -457,11 +551,50 @@
     <p id="msg" style="font-size:20px; margin-top:15px;"></p>
 </div>
 
-<footer>
-    <p>تمامی حقوق این سایت محفوظ است © کتابکده دانش</p>
-    <a href="https://enamad.ir/" target="_blank">
-        <img src="logo.jpg" alt="نماد اعتماد الکترونیکی" width="80">
-    </a>
+<footer class="footer">
+    <div class="footer-container">
+        <!-- بخش اول: درباره ما -->
+        <div class="footer-section about">
+            <h3>کتابکده دانش</h3>
+            <p>مرجع کامل کتاب‌های آموزشی، روانشناسی و خودشناسی. با ما دانش را تجربه کنید!</p>
+        </div>
+
+        <!-- بخش دوم: لینک‌ها -->
+        <div class="footer-section links">
+            <h3>لینک‌های سریع</h3>
+            <ul>
+                <li><a href="#home">خانه</a></li>
+                <li><a href="#store">فروشگاه</a></li>
+                <li><a href="index3.html">جدیدترین‌ها</a></li>
+                <li><a href="index2.html">ارتباط با ما</a></li>
+            </ul>
+        </div>
+
+        <!-- بخش سوم: شبکه‌های اجتماعی -->
+        <div class="footer-section social">
+            <h3>ما را دنبال کنید</h3>
+            <div class="social-icons">
+                <a href="#"><img src="facebook.png" alt="Facebook" width="30"></a>
+                <a href="#"><img src="instagram.png" alt="Instagram" width="30"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter" width="30"></a>
+            </div>
+        </div>
+
+        <!-- بخش چهارم: عضویت در خبرنامه -->
+        <div class="footer-section newsletter">
+            <h3>خبرنامه</h3>
+            <p>ایمیل خود را وارد کنید و جدیدترین مقالات و کتاب‌ها را دریافت کنید:</p>
+            <input type="email" placeholder="ایمیل شما">
+            <button>عضویت</button>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>تمامی حقوق محفوظ است © کتابکده دانش 2025</p>
+        <a href="https://enamad.ir/" target="_blank">
+            <img src="logo.jpg" alt="نماد اعتماد الکترونیکی" width="80">
+        </a>
+    </div>
 </footer>
 
 <!-- اسکریپت‌ها -->
