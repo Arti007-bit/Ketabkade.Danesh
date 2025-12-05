@@ -220,6 +220,48 @@
   text-align: right;
   font-family: sans-serif;
 }
+        /* دکمه دارک مود */
+.dark-toggle {
+    background: #222;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.dark-toggle:hover {
+    transform: scale(1.07);
+    background: #000;
+}
+
+/* حالت دارک مود */
+.dark-mode {
+    background: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode header {
+    background: #1f1f1f !important;
+}
+
+.dark-mode .product {
+    background: #1d1d1d;
+    color: #ddd;
+    box-shadow: 0 2px 10px rgba(255,255,255,0.06);
+}
+
+.dark-mode footer {
+    background: #1f1f1f !important;
+}
+
+/* متن‌ها و لینک‌ها */
+.dark-mode a { color: #7bb4ff !important; }
     </style>
 </head>
 <body>
@@ -237,7 +279,9 @@
     <div class="cart">
         <a href="cart.html" target="_blank">🛒 Store</a>
     </div>
-
+<button id="dark-mode-toggle" class="dark-toggle">
+    🌙
+</button>
     <div class="search-box">
         <input type="text" placeholder="جستجوی کتاب...">
         <button>جستجو</button>
@@ -513,5 +557,26 @@ cartButtons.forEach(btn => {
     });
 });
 </script>
+    <script>
+const toggleBtn = document.getElementById("dark-mode-toggle");
+
+// اگر قبلاً دارک مود فعال بوده، بازیابی کن
+if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+    toggleBtn.innerText = "☀️";
+}
+
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+        toggleBtn.innerText = "☀️";
+    } else {
+        localStorage.setItem("darkMode", "disabled");
+        toggleBtn.innerText = "🌙";
+    }
+});
+    </script>
 </body>
 </html>
