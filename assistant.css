@@ -1,0 +1,80 @@
+#book-assistant-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  background: #4caf50;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 2000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#book-assistant-box {
+  position: fixed;
+  bottom: 95px;
+  right: 25px;
+  width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  display: none;
+  flex-direction: column;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.assistant-header {
+  background: #4caf50;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+#assistant-messages {
+  padding: 10px;
+  height: 240px;
+  overflow-y: auto;
+  background: #f4f6d8;
+}
+
+.bot-msg, .user-msg {
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.bot-msg { background: #e8f5e9; }
+.user-msg {
+  background: #c8e6c9;
+  text-align: right;
+}
+
+.assistant-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.assistant-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.assistant-input button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+}
