@@ -1,234 +1,150 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-<meta charset="UTF-8">
-<title>جدیدترین‌ها</title>
+    <meta charset="UTF-8">
+    <title>جدیدترین ها</title>
+    <style>
+        /* تنظیمات پایه */
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: "Tahoma", sans-serif;
+            background: #f4f6d8;
+            direction: rtl;
+        }
+         body {
+            font-family: sans-serif;
+            direction: rtl;
+            text-align: center;
+            background-color:#D3F5B5;
+            margin: 0;
+            padding: 50px;
+        }
+        /* بخش محصولات */
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 30px 40px;
+        }
+        .product {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+        .product img { width: 150px; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 10px; }
+        .product h3 { font-size: 18px; margin: 5px 0; color: #333; }
+        .product p { font-size: 14px; color: #555; margin: 3px 0; }
+        .price { font-weight: bold; color: #d32f2f; margin: 8px 0; }
+        .product button { background: #ff4800; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; transition: 0.2s; }
+        .product button:hover { background: #e03b00; }
 
-<style>
-* { box-sizing: border-box; }
+        h1 {
+            color: #333;
+        }
 
-body {
-    font-family: sans-serif;
-    direction: rtl;
-    text-align: center;
-    background-color: #D3F5B5;
-    margin: 0;
-    padding: 40px;
-}
+        a {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px 20px;
+            background-color: #0078d7;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
 
-/* محصولات */
-.product-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 30px;
-}
-
-.product {
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: 0.2s;
-}
-
-.product:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-.product img {
-    width: 150px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.price {
-    font-weight: bold;
-    color: #d32f2f;
-    margin: 8px 0;
-}
-
-button {
-    background: #ff4800;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-button:hover { background: #e03b00; }
-
-a {
-    display: inline-block;
-    margin: 15px;
-    padding: 10px 20px;
-    background: #0078d7;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-}
-
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: #fff;
-    max-width: 700px;
-    width: 90%;
-    border-radius: 12px;
-    padding: 20px;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-.close-btn {
-    font-size: 26px;
-    cursor: pointer;
-    float: left;
-}
-
-.modal-body {
-    display: flex;
-    gap: 20px;
-    text-align: right;
-}
-
-.modal-body img {
-    width: 200px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.modal-price {
-    color: #d32f2f;
-    font-weight: bold;
-    margin: 10px 0;
-}
-</style>
+        a:hover {
+            background-color: #005fa3;
+        }
+    </style>
 </head>
-
 <body>
+<h1>محصولات بروز شده</h1>
 
-<h1>محصولات به‌روز شده</h1>
-<a href="index.html">بازگشت به صفحه اصلی</a>
+<a href="index.html">🏠 بازگشت به صحفه ی اصلی </a>
 
 <div class="product-container">
-
     <div class="product">
-        <img src="movafaghyat.jpg">
+        <img src="movafaghyat.jpg" alt="موفقیت">
         <h3>موفقیت</h3>
         <p>نویسنده: چارلز داهیگ</p>
         <div class="price">۲۱۰,۰۰۰ تومان</div>
-
-        <button class="quick-view"
-            data-name="موفقیت"
-            data-author="چارلز داهیگ"
-            data-price="210000"
-            data-img="movafaghyat.jpg"
-            data-desc="کتاب موفقیت درباره عادت‌ها، تصمیم‌گیری و رشد فردی است.">
-            مشاهده جزئیات
-        </button>
-
-        <button class="add-to-cart" data-name="موفقیت" data-price="210000">
-            افزودن به سبد خرید
-        </button>
+        <button class="add-to-cart" data-name="موفقیت" data-price="210000">افزودن به سبد خرید</button>
     </div>
-
-</div>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div class="modal-body">
-            <img id="m-img">
-            <div>
-                <h2 id="m-name"></h2>
-                <p id="m-author"></p>
-                <p id="m-desc"></p>
-                <div class="modal-price" id="m-price"></div>
-                <button id="modal-cart">افزودن به سبد خرید</button>
-            </div>
-        </div>
+    <div class="product">
+        <img src="raz.jpg" alt="راز">
+        <h3>راز</h3>
+        <p>نویسنده: چارلز داهیگ</p>
+        <div class="price">۲۱۰,۰۰۰ تومان</div>
+        <button class="add-to-cart" data-name="راز" data-price="210000">افزودن به سبد خرید</button>
+    </div>
+    <div class="product">
+        <img src="asar-morakab.jpg" alt="اثر مرکب">
+        <h3>اثر مرکب</h3>
+        <p>نویسنده: چارلز داهیگ</p>
+        <div class="price">۲۱۰,۰۰۰ تومان</div>
+        <button class="add-to-cart" data-name="اثر مرکب" data-price="210000">افزودن به سبد خرید</button>
     </div>
 </div>
 
+<h1> سرانه مطالعه کتاب در کشور </h1> <div style="text-align:right; margin:30px;"> </div>
+<p>**طبق آمار رسمی سرانه مطالعه و میزان کتاب‌خوانی ایرانیان  حدود ۳۰ دقیقه در روز را نشان می‌دهند** </p>
+<p> اما معمولا درباره این روش آمارگیری نکاتی مطرح است، مانند اینکه چه نوع مطالعه‌ای را جزء آمار محسوب می‌کنند به طور کلی   مطالعه کتاب‌های درسی، ادعیه  مذهبی و خواندن قرآن باید جزء سرانه قرار بگیرد یا خیر؟ در حال حاضر درباره این مسائل نظر‌های مختلفی ارائه می‌شود. </p>
 <script>
-const modal = document.getElementById("modal");
-const body = document.body;
+<script>
+    // همه دکمه‌های افزودن به سبد خرید
+    const buttons = document.querySelectorAll(".add-to-cart");
 
-let currentProduct = {};
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const name = btn.getAttribute("data-name");
+            const price = Number(btn.getAttribute("data-price"));
 
-document.querySelectorAll(".quick-view").forEach(btn => {
-    btn.onclick = () => {
-        currentProduct = {
-            name: btn.dataset.name,
-            price: Number(btn.dataset.price)
-        };
+            // گرفتن سبد خرید از localStorage یا ایجاد جدید
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        document.getElementById("m-img").src = btn.dataset.img;
-        document.getElementById("m-name").innerText = btn.dataset.name;
-        document.getElementById("m-author").innerText = "نویسنده: " + btn.dataset.author;
-        document.getElementById("m-desc").innerText = btn.dataset.desc;
-        document.getElementById("m-price").innerText =
-            Number(btn.dataset.price).toLocaleString() + " تومان";
+            // بررسی اینکه محصول از قبل در سبد هست یا نه
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({name: name, price: price, quantity: 1});
+            }
 
-        modal.style.display = "flex";
-        body.style.overflow = "hidden";
-    };
-});
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${name} به سبد خرید اضافه شد 🛒`);
+        });
+    });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".pay-btn");
 
-document.querySelector(".close-btn").onclick = () => {
-    modal.style.display = "none";
-    body.style.overflow = "auto";
-};
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const product = btn.closest(".product");
+            const name = product.querySelector("h3").innerText;
+            const priceText = product.querySelector(".price").innerText.replace(/[^0-9]/g, '');
+            const price = parseInt(priceText);
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-window.onclick = e => {
-    if (e.target === modal) {
-        modal.style.display = "none";
-        body.style.overflow = "auto";
-    }
-};
+            // بررسی اینکه محصول قبلاً وجود داشته باشه
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ name: name, price: price, quantity: 1 });
+            }
+ localStorage.setItem('cart', JSON.stringify(cart));
 
-document.getElementById("modal-cart").onclick = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const item = cart.find(p => p.name === currentProduct.name);
-
-    if (item) item.quantity++;
-    else cart.push({ ...currentProduct, quantity: 1 });
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert("محصول به سبد خرید اضافه شد");
-};
-
-document.querySelectorAll(".add-to-cart").forEach(btn => {
-    btn.onclick = () => {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const item = cart.find(p => p.name === btn.dataset.name);
-
-        if (item) item.quantity++;
-        else cart.push({ name: btn.dataset.name, price: Number(btn.dataset.price), quantity: 1 });
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-        alert("محصول به سبد خرید اضافه شد");
-    };
+        alert(" ✔ «" + title + "» محصول به سبد خرید اضافه شد!");
+        });
+    });
 });
 </script>
 
