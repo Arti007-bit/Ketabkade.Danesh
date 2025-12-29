@@ -58,9 +58,86 @@
             transition: 0.3s;
         }
 
+        .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 12px;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    font-size: 26px;
+    cursor: pointer;
+    float: left;
+}
+
+.modal-body {
+    display: flex;
+    gap: 20px;
+}
+
+.modal-body img {
+    width: 200px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.modal-info h2 {
+    margin-top: 0;
+}
+
+.modal-price {
+    font-weight: bold;
+    color: #d32f2f;
+    margin: 10px 0;
+}
+
+#modal-add-cart {
+    background: #ff4800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
         a:hover {
             background-color: #005fa3;
         }
+        <div class="modal" id="quickViewModal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+
+        <div class="modal-body">
+            <img id="modal-img" src="" alt="">
+            <div class="modal-info">
+                <h2 id="modal-title"></h2>
+                <p id="modal-author"></p>
+                <p id="modal-desc"></p>
+                <div class="modal-price" id="modal-price"></div>
+                <button id="modal-add-cart">افزودن به سبد خرید</button>
+            </div>
+        </div>
+    </div>
+</div>
     </style>
 </head>
 <body>
@@ -70,6 +147,14 @@
 
 <div class="product-container">
     <div class="product">
+<button class="quick-view-btn"
+        data-title="موفقیت"
+        data-author="چارلز داهیگ"
+        data-price="210000"
+        data-img="movafaghyat.jpg"
+        data-desc="کتاب موفقیت درباره عادت‌ها، تصمیم‌گیری و مسیر رشد فردی است.">
+    مشاهده جزئیات
+</button>
         <img src="movafaghyat.jpg" alt="موفقیت">
         <h3>موفقیت</h3>
         <p>نویسنده: چارلز داهیگ</p>
@@ -145,6 +230,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
+<script>
+const modal = document.getElementById("quickViewModal");
+const closeBtn = document.querySelector(".close-btn");
 
+const modalImg = document.getElementById("modal-img");
+const modalTitle = document.getElementById("modal-title");
+const modalAuthor = document.getElementById("modal-author");
+const modalDesc = document.getElementById("modal-desc");
+const modalPrice = document.getElementById("modal-price");
+
+document.querySelectorAll(".quick-view-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        modalImg.src = btn.dataset.img;
+        modalTitle.innerText = btn.dataset.title;
+        modalAuthor.innerText = "نویسنده: " + btn.dataset.author;
+        modalDesc.innerText = btn.dataset.desc;
+        modalPrice.innerText = Number(btn.dataset.price).toLocaleString() + " تومان";
+
+        modal.style.display = "flex";
+    });
+});
+
+closeBtn.onclick = () => modal.style.display = "none";
+
+window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+};
+</script>
 </body>
 </html>
