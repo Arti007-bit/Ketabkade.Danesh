@@ -357,10 +357,6 @@
 
 /* متن‌ها و لینک‌ها */
 .dark-mode a { color: #7bb4ff !important; }
-   .categories {
-    margin: 20px 0;
-}
-
     </style>
 </head>
 <body>
@@ -396,12 +392,9 @@
 
 <h2 class="product-title">دسته بندی محصولات</h2>
 
-        <button class="add-to-cart" data-name="موفقیت" data-price="210000">
-            افزودن به سبد خرید
-        </button>
-    </div>
-</div>
+<section id="store" class="product-container">
 
+    <div class="product">
         <img src="qodrat.jpg" alt="قدرت عادت">
         <h3>قدرت عادت</h3>
         <p>نویسنده: چارلز داهیگ</p>
@@ -440,13 +433,15 @@
         <button class="add-to-cart" data-price="150000">افزودن به سبد خرید</button>
     </div>
 
+ <div class="product">
         <img src="qole.jpg" alt=" قله ها و دره ها ">
         <h3> قله ها و دره ها</h3>
         <p>نویسنده: دکتر اسپنسون جانسون</p>
         <div class="price">۲۱۰,۰۰۰ تومان</div>
         <button class="add-to-cart" data-price="210000">افزودن به سبد خرید</button>
     </div>
-    
+
+      <div class="product">
         <img src="shad.webp" alt=" شاد کام زیستن ">
         <h3> شاد کام زیستن </h3>
         <p>نویسنده: سونیا یاسربیگی</p>
@@ -454,6 +449,7 @@
         <button class="add-to-cart" data-price="185000">افزودن به سبد خرید</button>
     </div>
 
+<div class="product">
         <img src="kimiagar-min.jpg" alt="کیمیاگر">
         <h3> کیمیاگر </h3>
         <p>نویسنده: پائولو کوئلیو</p>
@@ -461,12 +457,14 @@
         <button class="add-to-cart" data-price="240000">افزودن به سبد خرید</button>
     </div>
 
+    <div class="product">
         <img src="jado.jpg" alt=" جادوی فکر بزرگ ">
         <h3> جادوی فکر بزرگ </h3>
         <p>نویسنده: دکتر د.شوارتز</p>
         <div class="price">۱۸۵,۰۰۰ تومان</div>
         <button class="add-to-cart" data-price="185000">افزودن به سبد خرید</button>
     </div>
+ <div class="product">
         <img src="12soton.jfif" alt="تصویر دوازده ستون">
         <h3>دوازده ستون</h3>
         <p>نویسنده:کریس واینر-جیم ران -</p>
@@ -474,13 +472,17 @@
         <button class="add-to-cart" data-price="210000">افزودن به سبد خرید</button>
  </div>
 
+     <div class="product">
+        <img src="qodrat.jpg" alt="قدرت عادت">
+        <h3>قدرت عادت</h3>
         <img src="enzebat-s.jpg" alt="انظباط شخصی تصویر ">
         <h3>انظباط شخصی در 10 روز </h3>
         <p>نویسنده: چارلز داهیگ</p>
         <div class="price">۲۱۰,۰۰۰ تومان</div>
         <button class="add-to-cart" data-price="210000">افزودن به سبد خرید</button>
     </div>
-    
+
+<div class="product">
         <img src="dostyabi.jpg" alt="تصویر آیین دوست یابی ">
         <h3> آیین دوست یابی</h3>
         <p>نویسنده: دیل کارنگی</p>
@@ -734,7 +736,6 @@ toggleBtn.addEventListener("click", () => {
         toggleBtn.innerText = "🌙";
     }
 });
-
     </script>
     <script src="assistant.js"></script>
 </body>
