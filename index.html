@@ -357,6 +357,27 @@
 
 /* متن‌ها و لینک‌ها */
 .dark-mode a { color: #7bb4ff !important; }
+   .categories {
+    margin: 20px 0;
+}
+
+.cat-btn {
+    background: #fff;
+    border: 2px solid #0078d7;
+    color: #0078d7;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cat-btn.active,
+.cat-btn:hover {
+    background: #0078d7;
+    color: #fff;
+}
+
     </style>
 </head>
 <body>
@@ -392,9 +413,16 @@
 
 <h2 class="product-title">دسته بندی محصولات</h2>
 
+    <div class="categories">
+    <button class="cat-btn active" data-category="all">همه</button>
+    <button class="cat-btn" data-category="angizeshi">انگیزشی</button>
+    <button class="cat-btn" data-category="movafaghiat">موفقیت</button>
+    <button class="cat-btn" data-category="zendegi">زندگی</button>
+</div>
+
 <section id="store" class="product-container">
 
-    <div class="product">
+<div class="product" data-category="movafaghiat">
         <img src="qodrat.jpg" alt="قدرت عادت">
         <h3>قدرت عادت</h3>
         <p>نویسنده: چارلز داهیگ</p>
@@ -733,6 +761,28 @@ toggleBtn.addEventListener("click", () => {
         localStorage.setItem("darkMode", "disabled");
         toggleBtn.innerText = "🌙";
     }
+});
+        <script>
+const categoryButtons = document.querySelectorAll(".cat-btn");
+const products = document.querySelectorAll(".product");
+
+categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        // active class
+        categoryButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const category = btn.dataset.category;
+
+        products.forEach(product => {
+            if (category === "all" || product.dataset.category === category) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
 });
     </script>
     <script src="assistant.js"></script>
