@@ -361,28 +361,6 @@
     margin: 20px 0;
 }
 
-.cat-btn {
-    background: #fff;
-    border: 2px solid #0078d7;
-    color: #0078d7;
-    padding: 8px 16px;
-    margin: 5px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.cat-btn.active,
-.cat-btn:hover {
-    background: #0078d7;
-    color: #fff;
-}
-h2 {
-    text-align: right;
-    margin: 40px 40px 10px;
-    color: #2e7d32;
-}
-
     </style>
 </head>
 <body>
@@ -417,47 +395,6 @@ h2 {
 </div>
 
 <h2 class="product-title">دسته بندی محصولات</h2>
-<h2>📘 کتاب‌های انگیزشی</h2>
-<div class="product-container">
-    <div class="product" data-category="motivational">
-        <img src="raz.jpg" alt="راز">
-        <h3>راز</h3>
-        <p>نویسنده: راندا برن</p>
-        <div class="price">۲۱۰,۰۰۰ تومان</div>
-
-        <button class="quick-view-btn"
-            data-title="راز"
-            data-author="راندا برن"
-            data-price="210000"
-            data-img="raz.jpg"
-            data-desc="کتابی درباره قانون جذب و قدرت ذهن.">
-            مشاهده جزئیات
-        </button>
-
-        <button class="add-to-cart" data-name="راز" data-price="210000">
-            افزودن به سبد خرید
-        </button>
-    </div>
-</div>
-
-<hr>
-
-<h2>🚀 کتاب‌های موفقیت</h2>
-<div class="product-container">
-    <div class="product" data-category="success">
-        <img src="movafaghyat.jpg" alt="موفقیت">
-        <h3>موفقیت</h3>
-        <p>نویسنده: چارلز داهیگ</p>
-        <div class="price">۲۱۰,۰۰۰ تومان</div>
-
-        <button class="quick-view-btn"
-            data-title="موفقیت"
-            data-author="چارلز داهیگ"
-            data-price="210000"
-            data-img="movafaghyat.jpg"
-            data-desc="کتابی درباره عادت‌ها و مسیر رشد فردی.">
-            مشاهده جزئیات
-        </button>
 
         <button class="add-to-cart" data-name="موفقیت" data-price="210000">
             افزودن به سبد خرید
@@ -465,41 +402,6 @@ h2 {
     </div>
 </div>
 
-<hr>
-
-<h2>🌱 کتاب‌های زندگی</h2>
-<div class="product-container">
-    <div class="product" data-category="life">
-        <img src="asar-morakab.jpg" alt="اثر مرکب">
-        <h3>اثر مرکب</h3>
-        <p>نویسنده: دارن هاردی</p>
-        <div class="price">۲۱۰,۰۰۰ تومان</div>
-
-        <button class="quick-view-btn"
-            data-title="اثر مرکب"
-            data-author="دارن هاردی"
-            data-price="210000"
-            data-img="asar-morakab.jpg"
-            data-desc="تغییرات کوچک، نتایج بزرگ در زندگی.">
-            مشاهده جزئیات
-        </button>
-
-        <button class="add-to-cart" data-name="اثر مرکب" data-price="210000">
-            افزودن به سبد خرید
-        </button>
-    </div>
-</div>
-
-    <div class="categories"> 
-    <button class="cat-btn active" data-category="all">همه</button>
-    <button class="cat-btn" data-category="angizeshi">انگیزشی</button>
-    <button class="cat-btn" data-category="movafaghiat">موفقیت</button>
-    <button class="cat-btn" data-category="zendegi">زندگی</button>
-</div>
-
-<section id="store" class="product-container">
-
-<div class="product" data-category="movafaghiat">
         <img src="qodrat.jpg" alt="قدرت عادت">
         <h3>قدرت عادت</h3>
         <p>نویسنده: چارلز داهیگ</p>
@@ -538,7 +440,6 @@ h2 {
         <button class="add-to-cart" data-price="150000">افزودن به سبد خرید</button>
     </div>
 
- <div class="product" data-category="angizeshi">
         <img src="qole.jpg" alt=" قله ها و دره ها ">
         <h3> قله ها و دره ها</h3>
         <p>نویسنده: دکتر اسپنسون جانسون</p>
@@ -546,7 +447,6 @@ h2 {
         <button class="add-to-cart" data-price="210000">افزودن به سبد خرید</button>
     </div>
     
-      <div class="product" data-category="angizeshi">
         <img src="shad.webp" alt=" شاد کام زیستن ">
         <h3> شاد کام زیستن </h3>
         <p>نویسنده: سونیا یاسربیگی</p>
@@ -554,7 +454,6 @@ h2 {
         <button class="add-to-cart" data-price="185000">افزودن به سبد خرید</button>
     </div>
 
-<div class="product data-category="zendegi">
         <img src="kimiagar-min.jpg" alt="کیمیاگر">
         <h3> کیمیاگر </h3>
         <p>نویسنده: پائولو کوئلیو</p>
@@ -562,14 +461,12 @@ h2 {
         <button class="add-to-cart" data-price="240000">افزودن به سبد خرید</button>
     </div>
 
-    <div class="product data-category="zendegi">
         <img src="jado.jpg" alt=" جادوی فکر بزرگ ">
         <h3> جادوی فکر بزرگ </h3>
         <p>نویسنده: دکتر د.شوارتز</p>
         <div class="price">۱۸۵,۰۰۰ تومان</div>
         <button class="add-to-cart" data-price="185000">افزودن به سبد خرید</button>
     </div>
- <div class="product data-category="zendegi">
         <img src="12soton.jfif" alt="تصویر دوازده ستون">
         <h3>دوازده ستون</h3>
         <p>نویسنده:کریس واینر-جیم ران -</p>
@@ -577,7 +474,6 @@ h2 {
         <button class="add-to-cart" data-price="210000">افزودن به سبد خرید</button>
  </div>
 
-     <div class="product data-category="zendegi">
         <img src="enzebat-s.jpg" alt="انظباط شخصی تصویر ">
         <h3>انظباط شخصی در 10 روز </h3>
         <p>نویسنده: چارلز داهیگ</p>
@@ -585,7 +481,6 @@ h2 {
         <button class="add-to-cart" data-price="210000">افزودن به سبد خرید</button>
     </div>
     
-<div class="product data-category="zendegi">
         <img src="dostyabi.jpg" alt="تصویر آیین دوست یابی ">
         <h3> آیین دوست یابی</h3>
         <p>نویسنده: دیل کارنگی</p>
@@ -839,28 +734,7 @@ toggleBtn.addEventListener("click", () => {
         toggleBtn.innerText = "🌙";
     }
 });
-        <script>
-const categoryButtons = document.querySelectorAll(".cat-btn");
-const products = document.querySelectorAll(".product");
 
-categoryButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-
-        // active class
-        categoryButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        const category = btn.dataset.category;
-
-        products.forEach(product => {
-            if (category === "all" || product.dataset.category === category) {
-                product.style.display = "block";
-            } else {
-                product.style.display = "none";
-            }
-        });
-    });
-});
     </script>
     <script src="assistant.js"></script>
 </body>
